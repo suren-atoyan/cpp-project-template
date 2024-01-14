@@ -12,7 +12,6 @@ echo "Installing Python-based tools..."
 pip3 install pre-commit cmakelang
 
 echo "Installing ROS2..."
-
 apt update
 apt install software-properties-common -y
 add-apt-repository universe -y
@@ -24,4 +23,3 @@ apt update
 apt upgrade -y
 apt install ros-humble-ros-base -y
 apt install ros-dev-tools -y
-source /opt/ros/humble/setup.bash
