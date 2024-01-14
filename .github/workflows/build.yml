@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install CMake
+      run: sudo apt-get install -y cmake
+
+    - name: Build
+      run: |
+        cmake -E make_directory build
+        cmake -S . -B build
+        cmake --build build
