@@ -1,15 +1,18 @@
 {
   "name": "C++ Development",
   "dockerFile": "Dockerfile",
-  "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake"
+      ]
+    }
   },
-  "extensions": [
-      "ms-vscode.cpptools",
-      "ms-vscode.cmake-tools",
-      "twxs.cmake"
-  ],
   "forwardPorts": [],
-  "postCreateCommand": "pip install pre-commit cmakelang",
   "remoteUser": "root"
 }
