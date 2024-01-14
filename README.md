@@ -1,3 +1,7 @@
+[![Build](https://github.com/suren-atoyan/cpp-project-template/actions/workflows/build.yml/badge.svg)]([https://github.com/suren-atoyan/Synchronix/actions/workflows/analyses.yml](https://github.com/suren-atoyan/cpp-project-template/actions/workflows/build.yml))
+[![Format](https://github.com/suren-atoyan/cpp-project-template/actions/workflows/format.yml/badge.svg)]([https://github.com/suren-atoyan/Synchronix/actions/workflows/playwright.yml](https://github.com/suren-atoyan/cpp-project-template/actions/workflows/format.yml))
+[![Lint](https://github.com/suren-atoyan/cpp-project-template/actions/workflows/lint.yml/badge.svg)]([https://github.com/suren-atoyan/Synchronix/actions/workflows/playwright.yml](https://github.com/suren-atoyan/cpp-project-template/actions/workflows/lint.yml))
+
 # C++ Project Template
 
 This repository serves as a template for modern C++ projects, incorporating tools for code formatting, linting, and maintaining consistent coding standards.
