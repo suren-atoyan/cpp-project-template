@@ -18,5 +18,6 @@ jobs:
 
     - name: Run clang-tidy
       run: |
-        clang-tidy --version
-        find src -regex '.*\.\(cpp\|cc\|cxx\)' | xargs clang-tidy -- -Iinclude
+        find src -regex '.*\.\(cpp\|cc\|cxx\)' | while read -r file; do
+          clang-tidy "$file" -- -Iinclude
+        done
