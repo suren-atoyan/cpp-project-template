@@ -69,3 +69,21 @@ You can also run these tools manually:
   ```bash
   flake8 path/to/your/script.py
   ```
+
+## GitHub Actions CI/CD
+
+This project uses GitHub Actions for Continuous Integration and Continuous Deployment (CI/CD). The following automated workflows are set up:
+
+1. **Code Formatting (`format.yml`)**: Checks if the code conforms to the defined formatting standards using `clang-format`.
+
+2. **Linting (`lint.yml`)**: Performs static code analysis using `clang-tidy` to identify potential issues in the C++ source files.
+
+3. **Building (`build.yml`)**: Compiles the project to ensure that the build process is successful.
+
+4. **Testing (`test.yml`)**: TBD.
+
+### Workflow Details
+
+- Each workflow is triggered on push and pull requests to the `main`|`master` branches.
+- Workflows are defined in the `.github/workflows` directory, with separate files for formatting, linting, building, and testing (soon).
+- These workflows ensure code quality and build integrity with every commit and pull request.
