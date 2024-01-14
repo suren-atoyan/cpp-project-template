@@ -1,38 +1,37 @@
-# To use:
-#
-#     pre-commit run -a
-#
-# Or:
-#
-#     pre-commit install  # (runs every time you commit in git)
-#
-# To update this file:
-#
-#     pre-commit autoupdate
-#
-# See https://github.com/pre-commit/pre-commit
-
-fail_fast: false
 repos:
-  # Standard hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.2.0  # Use the latest version
     hooks:
-      - id: check-added-large-files
-      - id: check-case-conflict
-      - id: check-merge-conflict
-      - id: check-symlinks
-      - id: check-yaml
-      - id: debug-statements
-      - id: end-of-file-fixer
-      - id: mixed-line-ending
       - id: trailing-whitespace
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+
   - repo: https://github.com/pocc/pre-commit-hooks
-    rev: master
+    rev: v1.3.5  # Use the latest version
     hooks:
       - id: clang-format
+      # Add a hook for clang-tidy here if available
+
+  - repo: local
+    hooks:
       - id: clang-tidy
-      - id: oclint
-      - id: uncrustify
-      - id: cppcheck
-      - id: cpplint
+        name: clang-tidy
+        entry: ./scripts/run-clang-tidy.sh
+        language: system
+        files: \.(cpp|hpp|cc|h|cxx)$
+
+  - repo: local
+    hooks:
+      - id: cmake-format
+        name: cmake-format
+        entry: cmake-format
+        language: system
+        files: CMakeLists\.txt|\.cmake$
+        types: [file]
+        # Define the cmake-format version in additional_dependencies if needed
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 3.9.2  # Use the latest version
+    hooks:
+      - id: flake8
