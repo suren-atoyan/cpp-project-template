@@ -87,3 +87,27 @@ This project uses GitHub Actions for Continuous Integration and Continuous Deplo
 - Each workflow is triggered on push and pull requests to the `main`|`master` branches.
 - Workflows are defined in the `.github/workflows` directory, with separate files for formatting, linting, building, and testing (soon).
 - These workflows ensure code quality and build integrity with every commit and pull request.
+
+## GitHub Codespaces Configuration
+
+This project is configured to be used with GitHub Codespaces, providing a fully setup development environment with all the necessary tools pre-installed.
+
+### Features
+
+- Pre-configured C++ development environment.
+- Integrated tools like `clang-format`, `clang-tidy`, and `cmake`.
+- Automatic setup for `pre-commit` and other dependencies.
+
+### Getting Started
+
+To start using GitHub Codespaces:
+
+1. Go to the GitHub repository page.
+2. Click on the 'Code' button and select 'Open with Codespaces'.
+3. Choose to create a new codespace. This will set up the environment as per the configuration in `.devcontainer/devcontainer.json`.
+
+### Customizing the Environment
+
+- The development environment is defined in the `.devcontainer` folder.
+- `devcontainer.json` specifies the Docker image, installed extensions, and post-create commands.
+- You can modify these files to customize the Codespaces environment to better suit your project's needs.
